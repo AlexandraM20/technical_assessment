@@ -1,12 +1,21 @@
+body {
+  color: $color_black;
+  font-size: 0.9rem;
+}
+
+a {
+  text-decoration: none;
+}
+
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: $background_light_theme;
+  --foreground: $foreground_light_theme;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --background: $background_dark_theme;
+    --foreground: $foreground_dark_theme;
   }
 }
 
@@ -28,6 +37,7 @@ body {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
+  outline: none;
 }
 
 a {
