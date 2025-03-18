@@ -1,0 +1,36 @@
+{
+  "common": {
+    "home": "Home",
+    "products": "Products",
+    "news": "News",
+    "language": "Language",
+    "english": "English",
+    "german": "German"
+  },
+  "home": {
+    "welcome": "Welcome to our website!",
+    "description": "This is a static home page using Next.js (latest version) with the App Router."
+  },
+  "products": {
+    "title": "Our Products",
+    "inStock": "In Stock",
+    "outOfStock": "Out of Stock",
+    "category": "Category",
+    "addToCart": "Add to Cart",
+    "yes": "Yes",
+    "no": "No"
+  },
+  "news": {
+    "title": "Latest News",
+    "description": "Stay updated with our latest news and events.",
+    "readMore": "Read more",
+    "author": "Author",
+    "publishedAt": "Published at",
+    "loading": "Loading latest news...",
+    "error": {
+      "title": "Unable to load news.",
+      "description": "Please try again later or check your API configuration."
+    },
+    "lastFetched": "Last fetched"
+  }
+}

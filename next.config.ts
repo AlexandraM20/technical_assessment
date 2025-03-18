@@ -1,3 +1,4 @@
+import createNextIntlPlugin from 'next-intl/plugin';
 import type { NextConfig } from 'next';
 
 const nextConfig: NextConfig = {
@@ -11,6 +12,10 @@ const nextConfig: NextConfig = {
       },
     ],
   },
+  // Ensure static files are served from the public directory
+  assetPrefix: '',
+  output: 'standalone',
 };
 
-export default nextConfig;
+const withNextIntl = createNextIntlPlugin();
+export default withNextIntl(nextConfig);

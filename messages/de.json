@@ -1,0 +1,36 @@
+{
+  "common": {
+    "home": "Startseite",
+    "products": "Produkte",
+    "news": "Nachrichten",
+    "language": "Sprache",
+    "english": "Englisch",
+    "german": "Deutsch"
+  },
+  "home": {
+    "welcome": "Willkommen auf unserer Website!",
+    "description": "Dies ist eine statische Startseite, die Next.js (neueste Version) mit dem App Router verwendet."
+  },
+  "products": {
+    "title": "Unsere Produkte",
+    "inStock": "Auf Lager",
+    "outOfStock": "Nicht auf Lager",
+    "category": "Kategorie",
+    "addToCart": "In den Warenkorb",
+    "yes": "Ja",
+    "no": "Nein"
+  },
+  "news": {
+    "title": "Neueste Nachrichten",
+    "description": "Bleiben Sie mit unseren neuesten Nachrichten und Veranstaltungen auf dem Laufenden.",
+    "readMore": "Mehr lesen",
+    "author": "Autor",
+    "publishedAt": "Veröffentlicht am",
+    "loading": "Lade neueste Nachrichten...",
+    "error": {
+      "title": "Nachrichten konnten nicht geladen werden.",
+      "description": "Bitte versuchen Sie es später erneut oder überprüfen Sie Ihre API-Konfiguration."
+    },
+    "lastFetched": "Zuletzt abgerufen"
+  }
+}

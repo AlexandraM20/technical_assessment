@@ -1,0 +1,60 @@
+@use '../variables' as *;
+
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+  background-color: $color_white;
+  box-shadow: $box_shadow;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.leftSection {
+  display: flex;
+  gap: 2rem;
+}
+
+.navLink {
+  text-decoration: none;
+  color: $color_dark_gray;
+  font-weight: 500;
+  transition: color 0.2s ease;
+
+  &:hover {
+    color: $primary_color;
+  }
+}
+
+.rightSection {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.languageLabel {
+  color: $secondary_color;
+  font-size: 0.9rem;
+}
+
+.langButton {
+  padding: 0.5rem 1rem;
+  border: 1px solid $color_light_gray;
+  border-radius: 4px;
+  background: none;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  color: $color_dark_gray;
+
+  &:hover {
+    background-color: $color_light_gray;
+  }
+
+  &.active {
+    background-color: $primary_color;
+    color: $color_white;
+    border-color: $primary_color;
+  }
+}

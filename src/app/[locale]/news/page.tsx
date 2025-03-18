@@ -1,5 +1,7 @@
 import { Suspense } from 'react';
 import Image from 'next/image';
+import { useTranslations } from 'next-intl';
+import { getTranslations } from 'next-intl/server';
 import styles from '@/styles/pages/NewsPage.module.scss';
 
 interface Article {
@@ -41,22 +43,25 @@ async function fetchLatestNews(): Promise<Array<Article>> {
 }
 
 function NewsLoading() {
+  const t = useTranslations('news');
+
   return (
     <div className={styles.loadingContainer}>
       <div className={styles.loadingSpinner}></div>
-      <p>Loading latest news...</p>
+      <p>{t('loading')}</p>
     </div>
   );
 }
 
 async function NewsList() {
+  const t = await getTranslations('news');
   const articles = await fetchLatestNews();
 
   if (articles.length === 0) {
     return (
       <div className={styles.errorContainer}>
-        <h2>Unable to load news.</h2>
-        <p>Please try again later or check your API configuration.</p>
+        <h2>{t('error.title')}</h2>
+        <p>{t('error.description')}</p>
       </div>
     );
   }
@@ -81,11 +86,17 @@ async function NewsList() {
             <h2 className={styles.articleTitle}>{article.title}</h2>
             <p className={styles.articleDescription}>{article.description}</p>
             <div className={styles.articleMeta}>
-              {article.author && <span>{article.author}</span>}
-              <span>{new Date(article.publishedAt).toLocaleDateString()}</span>
+              {article.author && (
+                <span>
+                  {t('author')}: {article.author}
+                </span>
+              )}
+              <span>
+                {t('publishedAt')}: {new Date(article.publishedAt).toLocaleDateString()}
+              </span>
             </div>
             <a href={article.url} target="_blank" rel="noopener noreferrer" className={styles.readMoreLink}>
-              Read full article
+              {t('readMore')}
             </a>
           </div>
         </article>
@@ -95,17 +106,21 @@ async function NewsList() {
 }
 
 export default function NewsPage() {
+  const t = useTranslations('news');
+
   return (
     <div className={styles.newsPageContainer}>
-      <h1 className={styles.pageTitle}>Latest News</h1>
-      <p className={styles.pageDescription}>Updated news articles fetched server-side on each request</p>
+      <h1 className={styles.pageTitle}>{t('title')}</h1>
+      <p className={styles.pageDescription}>{t('description')}</p>
 
       <Suspense fallback={<NewsLoading />}>
         <NewsList />
       </Suspense>
 
       <div className={styles.pageFooter}>
-        <p>Last fetched: {new Date().toLocaleString()}</p>
+        <p>
+          {t('lastFetched')}: {new Date().toLocaleString()}
+        </p>
       </div>
     </div>
   );

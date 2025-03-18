@@ -1,4 +1,4 @@
-@import '@/styles/variables.scss';
+@use '../variables' as *;
 
 .productsContainer {
   padding: 2rem;
@@ -24,7 +24,7 @@
   overflow: hidden;
   box-shadow: $box_shadow;
   transition: $transition;
-  background-color: white;
+  background-color: $color_white;
   text-decoration: none;
   color: inherit;
   display: flex;

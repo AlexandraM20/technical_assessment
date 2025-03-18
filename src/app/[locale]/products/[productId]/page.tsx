@@ -1,6 +1,7 @@
 import { notFound } from 'next/navigation';
 import Image from 'next/image';
-import { getProductById, products } from '@/app/data/products';
+import { getTranslations } from 'next-intl/server';
+import { getProductById, products } from '@/app/[locale]/data/products';
 import styles from '@/styles/pages/ProductPage.module.scss';
 
 export function generateStaticParams() {
@@ -10,6 +11,7 @@ export function generateStaticParams() {
 }
 
 export default async function ProductPage({ params }: { params: { productId: string } }) {
+  const t = await getTranslations('products');
   // Extract the productId from params
   const { productId } = await params;
   const product = getProductById(productId);
@@ -31,12 +33,16 @@ export default async function ProductPage({ params }: { params: { productId: str
         <p className={styles.productDescription}>{product.description}</p>
 
         <div className={styles.productMeta}>
-          <span>Category: {product.category}</span>
-          <span>In Stock: {product.inStock ? 'Yes' : 'No'}</span>
+          <span>
+            {t('category')}: {product.category}
+          </span>
+          <span>
+            {t('inStock')}: {product.inStock ? t('yes') : t('no')}
+          </span>
         </div>
 
         <button className={styles.addToCartButton} disabled={!product.inStock}>
-          {product.inStock ? 'Add to Cart' : 'Out of Stock'}
+          {product.inStock ? t('addToCart') : t('outOfStock')}
         </button>
       </div>
     </div>
