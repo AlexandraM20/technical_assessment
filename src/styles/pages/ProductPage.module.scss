@@ -14,9 +14,9 @@
 }
 
 .productImageContainer {
-  border-radius: $border-radius;
+  border-radius: $border_radius;
   overflow: hidden;
-  box-shadow: $box-shadow;
+  box-shadow: $box_shadow;
   height: 400px;
   position: relative;
 }
@@ -34,7 +34,7 @@
 .productTitle {
   font-size: 2rem;
   margin-bottom: 1rem;
-  color: $secondary-color;
+  color: $secondary_color;
   grid-column: 1 / -1;
 }
 
@@ -47,12 +47,12 @@
 .productPrice {
   font-size: 1.5rem;
   font-weight: bold;
-  color: $primary-color;
+  color: $primary_color;
 }
 
 .productDescription {
   line-height: 1.6;
-  color: $secondary-color;
+  color: $secondary_color;
   margin-bottom: 1.5rem;
 }
 
@@ -63,24 +63,24 @@
 
   span {
     font-size: 0.9rem;
-    color: lighten($secondary-color, 20%);
+    color: lighten($secondary_color, 20%);
   }
 }
 
 .addToCartButton {
-  background-color: $primary-color;
+  background-color: $primary_color;
   color: white;
   border: none;
   padding: 0.75rem 1.5rem;
-  border-radius: $border-radius;
+  border-radius: $border_radius;
   font-weight: bold;
   cursor: pointer;
   transition: $transition;
 
   &:hover {
-    background-color: darken($primary-color, 10%);
+    background-color: darken($primary_color, 10%);
     transform: translateY(-2px);
-    box-shadow: $box-shadow;
+    box-shadow: $box_shadow;
   }
 
   &:active {

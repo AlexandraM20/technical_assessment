@@ -9,7 +9,7 @@
 .pageTitle {
   font-size: 2.5rem;
   margin-bottom: 2rem;
-  color: $secondary-color;
+  color: $secondary_color;
   text-align: center;
 }
 
@@ -20,9 +20,9 @@
 }
 
 .productCard {
-  border-radius: $border-radius;
+  border-radius: $border_radius;
   overflow: hidden;
-  box-shadow: $box-shadow;
+  box-shadow: $box_shadow;
   transition: $transition;
   background-color: white;
   text-decoration: none;
@@ -67,12 +67,12 @@
 .productName {
   font-size: 1.2rem;
   margin-bottom: 0.5rem;
-  color: $secondary-color;
+  color: $secondary_color;
 }
 
 .productPrice {
   font-weight: bold;
-  color: $primary-color;
+  color: $primary_color;
   margin-bottom: 0.5rem;
 }
 
