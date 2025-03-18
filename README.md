@@ -20,3 +20,5 @@ npm install # or yarn install
 ```
 
 Open [http://localhost:3000](http://localhost:3000) in your browser to see the application.
+
+The live version of the app can be found at: [https://my-technical-assessment.netlify.app/](https://my-technical-assessment.netlify.app/).
