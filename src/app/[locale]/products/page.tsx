@@ -4,7 +4,7 @@ import { getTranslations } from 'next-intl/server';
 import { products } from '@/app/[locale]/data/products';
 import styles from '@/styles/pages/ProductsPage.module.scss';
 
-export default async function ProductsPage({ params }: { params: { locale: string } }) {
+export default async function ProductsPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   const t = await getTranslations('products');
 

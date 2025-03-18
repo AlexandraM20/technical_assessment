@@ -10,7 +10,7 @@ export function generateStaticParams() {
   }));
 }
 
-export default async function ProductPage({ params }: { params: { productId: string } }) {
+export default async function ProductPage({ params }: { params: Promise<{ productId: string }> }) {
   const t = await getTranslations('products');
   // Extract the productId from params
   const { productId } = await params;
